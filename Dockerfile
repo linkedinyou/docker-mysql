@@ -8,7 +8,7 @@ ENV HOME /root
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && apt-get install -y -q xxxxxxxxxxxxx \
+RUN apt-get update && apt-get install -y -q mysql-server \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
@@ -21,7 +21,9 @@ COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
 ##Adding Deamons to containers
-#refers to dockerfile_reference
+RUN mkdir /etc/service/mysqld
+COPY mysqld.sh /etc/service/mysqld/run
+RUN chmod +x /etc/service/mysqld/run
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
