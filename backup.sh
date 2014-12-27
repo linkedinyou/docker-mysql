@@ -4,6 +4,7 @@
 
 #Backup mysql
 mysqldump -u root -p${MYSQL_PASSWD} --all-databases > /var/backups/alldb_backup.sql
+date > /var/backups/backdate
 
 #Backup important file ... of the configuration ...
 cp  /etc/hosts  /var/backups/
