@@ -39,6 +39,10 @@ COPY backup.sh /sbin/backup
 RUN chmod +x /sbin/backup
 VOLUME /var/backups
 
+#restore from backup
+COPY restore.sh /sbin/restore
+RUN chmod +x /sbin/restore
+
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 3306
