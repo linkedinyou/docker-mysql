@@ -3,4 +3,8 @@
 #each container will have their own custum restore scritp for it ... 
 
 #restore mysql
-mysqlimport -u root -p${MYSQL_PASSWD} --all-databases /var/backups/alldb_backup.sql
+if [ -f /var/backups/alldb_backup.sql ]; then
+  mysqlimport -u root -p${MYSQL_PASSWD} --all-databases /var/backups/alldb_backup.sql
+else
+  echo "database don't have backup"
+fi
