@@ -5,6 +5,7 @@
 #restore mysql
 if [ -f /var/backups/alldb_backup.sql ]; then
   mysqlimport -u root -p${MYSQL_PASSWD} --all-databases /var/backups/alldb_backup.sql
+   echo "database restore: from date " ; cat /var/backups/backupdate
 else
   echo "database don't have backup"
 fi
