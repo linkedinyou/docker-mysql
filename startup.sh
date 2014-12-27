@@ -8,7 +8,6 @@ else
   #code that need to run only one time ....
   /usr/bin/mysqld_safe &
   sleep 5s
-  MYSQL_PASSWD=${MYSQL_PASSWD:-mysqlpsswd}
   mysqladmin -u root password ${MYSQL_PASSWD}
   killall mysqld
   sleep 5s
