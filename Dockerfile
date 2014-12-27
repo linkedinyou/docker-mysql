@@ -5,6 +5,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 # Set correct environment variables.
 ENV HOME /root
+ENV MYSQL_PASSWD mysqlpsswd
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
