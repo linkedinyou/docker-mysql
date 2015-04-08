@@ -19,11 +19,11 @@ To install docker in Ubuntu 14.04 use the commands:
 
 To run container use the command below with default password "mysqlpasswd" :
 
-    $ docker run -d --name xxxx quantumobject/docker-mysql
+    $ docker run -d --name xxxx -p 3306:3306 quantumobject/docker-mysql
 
 To run it with expecified password :
 
-    $ docker run -d --name xxxx -e MYSQL_PASSWD=xxxxx quantumobject/docker-mysql
+    $ docker run -d --name xxxx -p 3306:3306 -e MYSQL_PASSWD=xxxxx quantumobject/docker-mysql
 
 To create backtup from that container to /var/backup volume folder :
 
