@@ -4,7 +4,6 @@ FROM quantumobject/docker-baseimage
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 # Set correct environment variables.
-ENV HOME /root
 ENV MYSQL_PASSWD mysqlpsswd
 
 #add repository and update the container
